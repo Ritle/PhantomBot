@@ -35,7 +35,8 @@
 
     /*
      * @function getTop5 - function of getting 5 top users
-     *
+     *This function gets a list of the first five users depending on the request. The loop iterates over the keys and adds them to the array. 
+      Finally, the function returns a list of users by time or score
      * @param {string} iniName
      * @returns {Array} - returns an array of users
      */
@@ -170,6 +171,9 @@
     /**
      * @event initReady
        Registering a command in the chat and sending it to the command handler
+       The main block contains the command handler for keywords in the chat. 
+       If the user enters top into the chat, the system will refer to the stream points module, if available, and display the first five users, if any. 
+       The block includes displaying the first 5 users by points and time, determining the number of people who will be shown in the chat.
      */
     $.bind('initReady', function() {
         $.registerChatCommand('./commands/topCommand.js', 'top', 7);
